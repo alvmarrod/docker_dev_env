@@ -95,7 +95,7 @@ RUN if [ "$(echo $TF | head -c 1)" = "1" ]; then \
     fi
 
 # User
-RUN useradd -m -s /bin/bash ${USER} -u ${USERID} -G sudo -p $(openssl passwd -1 chr0m4); \
+RUN useradd -m -s /bin/bash ${USER} -u ${USERID} -G sudo -p $(openssl passwd -1 docker); \
     usermod -aG sudo ${USER}
 USER ${USER}
 
