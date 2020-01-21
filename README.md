@@ -12,7 +12,7 @@ You have two options to use this repo:
 
 1. You can use the provided scripts and dockerfiles to build your own images, with some extra capabilities like adding your host files to your image, i.e. `.bashrc` or `.bash_aliases` files.
 
-2. You can go to *Docker Hub* and use published images directly.
+2. You can go to [*Docker Hub*](https://hub.docker.com/repository/docker/naipsas/develop/general) and use published images directly. Look for `Tensorflow on GPU` environment.
 
 If you choose the first option, continue reading the last section please.
 
