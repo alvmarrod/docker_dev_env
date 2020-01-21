@@ -124,7 +124,8 @@ function build {
     if [ "$param" = "y" ]; then
 
         docker build -t "$dockerfile" \
-                --build-arg BASE=$base \
+                --build-arg CUDA=$cuda \
+                --build-arg CUDNN=$cudnn \
                 --build-arg TF=$TF \
                 --build-arg KERAS=$Keras \
                 --build-arg USER=$USER \
