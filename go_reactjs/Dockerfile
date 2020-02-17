@@ -56,7 +56,7 @@ RUN wget -q https://dl.google.com/go/go${VERSION}.${OS}-${ARCH}.tar.gz; \
     rm go$VERSION.$OS-$ARCH.tar.gz
 
 # Regular user configuration
-RUN useradd -m -s /bin/bash ${USER} -u ${USERID} -G sudo -p $(openssl passwd -1 p8ss); \
+RUN useradd -m -s /bin/bash ${USER} -u ${USERID} -G sudo -p $(openssl passwd -1 docker); \
     usermod -aG sudo ${USER}
 
 # Taking bashrc and bash_aliases if they're available
