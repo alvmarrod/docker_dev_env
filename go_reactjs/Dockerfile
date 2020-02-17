@@ -68,8 +68,8 @@ RUN echo "\nexport PATH=$PATH:/usr/local/go/bin" >> /home/${USER}/.bashrc; \
     echo "\nexport PATH=$PATH:/usr/local/go/bin" >> /root/.bashrc
 
 # Installing Mux and other Gorilla packages
-RUN go get -u github.com/gorilla/mux; \
-    go get -u github.com/gorilla/handlers
+RUN /usr/local/go/bin/go get -u github.com/gorilla/mux; \
+    /usr/local/go/bin/go get -u github.com/gorilla/handlers
 
 # Installing Node.js
 # https://github.com/nodesource/distributions
