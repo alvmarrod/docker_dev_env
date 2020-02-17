@@ -1,0 +1,11 @@
+# alias python=python3
+alias l2='tree -L 2 --du -sh --filelimit 30'
+alias l2all='tree -L 2 --du -sh'
+alias l3='tree -L 3 --du -sh --filelimit 30'
+alias l3all='tree -L 3 --du -sh'
+# alias code='code -r'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias dockerct='~/research_garage/Dockerization/Linux/Scripts/ctdevelop.sh'
+alias ll='ls -alhF'
