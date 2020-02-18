@@ -67,20 +67,20 @@ COPY ./.bash* root/
 RUN echo "\nexport PATH=$PATH:/usr/local/go/bin" >> /home/${USER}/.bashrc; \
     echo "\nexport PATH=$PATH:/usr/local/go/bin" >> /root/.bashrc
 
-# Installing Mux and other Gorilla packages
-RUN /usr/local/go/bin/go get -u github.com/gorilla/mux; \
-    /usr/local/go/bin/go get -u github.com/gorilla/handlers
-
 # Installing Node.js
 # https://github.com/nodesource/distributions
 RUN curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -; \
     apt-get ${APT_ARGS} install -y nodejs
 
+# RUN npm i react-switch
+
 # Installing react components
-RUN npm i react-switch
+# Installing Mux and other Gorilla packages
+USER ${USER}
+RUN /usr/local/go/bin/go get -u github.com/gorilla/mux; \
+    /usr/local/go/bin/go get -u github.com/gorilla/handlers
 
 # Entrypoint
-USER ${USER}
 ENTRYPOINT [ "/bin/bash" ]
 
 # Build
