@@ -105,8 +105,8 @@ function build {
     config_files=$param
 
     if [ "$config_files" = true ]; then
-        cp ~/.ssh/config $lvl3_path/Config/
-        cp /etc/hosts $lvl3_path/Config/
+        cp ~/.ssh/config $script_path/Config/
+        cp /etc/hosts $script_path/Config/
     fi
 
     # Ask for image name
