@@ -48,6 +48,18 @@ function install {
     if [ "$param" = "y" ]; then
 
         printf "\t Installing Docker...\n"
+		sudo apt-get update
+		sudo apt-get install \
+			 apt-transport-https \
+			 ca-certificates \
+			 curl \
+			 gnupg-agent \
+			 software-properties-common
+		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+		sudo add-apt-repository \
+			 "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+			 $(lsb_release -cs) \
+			 stable"
         sudo apt install $apt_silent -y docker-ce
 
         printf "\t Installing NVIDIA Container Toolkit...\n"
@@ -259,7 +271,7 @@ function run {
                 ensure_path "VIDEOS" $videos_path
                 videos_path=$param
 
-                mount_repo="--mount src=$code_path,target=/chroma_tools,type=bind"
+                mount_repo="--mount src=$code_path,target=/app,type=bind"
                 mount_dataset="--mount src=$dataset_path,target=/datasets,type=bind"
                 mount_videos="--mount src=$videos_path,target=/videos,type=bind"
                 mount_all="$mount_repo $mount_dataset $mount_videos"
